@@ -1,14 +1,35 @@
 {
   "name": "note-taker",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Readme coming soon!",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "start": "node server.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Anders Ackerman",
+  "license": "MIT",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.17.1"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DJ-Viking/note-taker.git"
+  },
+  "keywords": [
+    "express",
+    "javascript",
+    "node",
+    "jest"
+  ],
+  "bugs": {
+    "url": "https://github.com/DJ-Viking/note-taker/issues"
+  },
+  "homepage": "https://github.com/DJ-Viking/note-taker#readme",
+  "devDependencies": {
+    "jest": "^26.4.0"
   }
 }
