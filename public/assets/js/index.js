@@ -64,6 +64,9 @@ handleNoteSave = function() {
 
 // BONUS Delete the clicked note
 handleNoteDelete = function(event) {
+  console.log(event);
+  console.log(event.target);
+  alert("You deleted an item! refresh the page to see the changes!")
   // prevents the click listener for the list from being called when the button inside of it is clicked
   event.stopPropagation();
 

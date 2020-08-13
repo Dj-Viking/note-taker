@@ -64,12 +64,31 @@ router.delete('/notes/:id', (req, res) => {
         ,
         JSON.stringify({ notes: filteredArr }, null, 2)
       )
-      .then(data => data.json())
+      .then(data => res.json(notes))
       .catch(err => err);
+      
   } else {
     res.sendStatus(404);
   }
 });
+
+// router.delete('/notes/:id', (req, res) => {
+//   console.log("\x1b[31m", "DELETE request incoming", "\x1b[00m");
+//     console.log(res.statusCode);
+//     console.log("================");
+//     console.log("\x1b[31m", "writing new database after deleting an item", "\x1b[00m");
+//   const reqId = req.params.id;
+
+//   let note = notes.filter(note => {
+//     return note.id == reqId;
+//   });
+
+//   const index = notes.indexOf(note);
+
+//   notes.splice(index, 1);
+
+//   res.json(notes);
+// });
 
 module.exports = router;
 
