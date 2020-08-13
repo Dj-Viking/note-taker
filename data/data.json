@@ -1,0 +1,28 @@
+{
+  "notes": [
+    {
+      "title": "do laundry",
+      "text": "just do the laundry",
+      "id": "0"
+    },
+    {
+      "title": "wash dishes",
+      "text": "wash all the dishes sparkly clean",
+      "id": "1"
+    },
+    {
+      "title": "exercise",
+      "text": "run three miles",
+      "id": "2"
+    },
+    {
+      "title": "code",
+      "text": "code a back end server using express.js",
+      "id": "3"
+    },
+    {
+      "title": "newest note",
+      "text": "here is the newest note"
+    }
+  ]
+}

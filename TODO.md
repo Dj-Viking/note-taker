@@ -1,10 +1,10 @@
 # Acceptance Criteria
 
-* GIVEN a note-taking application
-* WHEN I open the Note Taker
-* THEN I am presented with a landing page with a link to a notes page
-* WHEN I click on the link to the notes page
-* THEN I am presented with a page with existing notes listed in the left-hand column, plus empty fields to enter a new note title and the note’s text in the right-hand column
+* DONE GIVEN a note-taking application
+* DONE WHEN I open the Note Taker
+* DONE THEN I am presented with a landing page with a link to a notes page
+* DONE WHEN I click on the link to the notes page
+* DONE THEN I am presented with a page with existing notes listed in the left-hand column, plus empty fields to enter a new note title and the note’s text in the right-hand column
 * WHEN I enter a new note title and the note’s text
 * THEN a Save icon appears in the navigation at the top of the page
 * WHEN I click on the Save icon
@@ -16,11 +16,11 @@
 
 ## Getting started
 
-* <code>GET /notes</code> should return the notes.html file.
-* <code>GET *</code> should return the index.html file.
+* DONE <code>GET /notes</code> should return the notes.html file.
+* DONE <code>GET *</code> should return the index.html file.
 
 * The following API routes should be created:
-  - <code>GET /api/notes</code> should read the db.json file and return all saved notes as JSON
+  - DONE <code>GET /api/notes</code> should read the db.json file and return all saved notes as JSON
   - <code>POST /api/notes</code> should recieve a new note to save on the request body, add it to the <code>db.json</code> file and then return the new note to the client. You'll need to find a way to give each note a unique id when it's saved.
 
 ## BONUS
