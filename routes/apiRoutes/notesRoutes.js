@@ -69,7 +69,7 @@ router.delete('/notes/:id', (req, res) => {
   } else {
     res.sendStatus(404);
   }
-})
+});
 
 module.exports = router;
 
