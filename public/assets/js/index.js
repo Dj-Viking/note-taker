@@ -66,19 +66,6 @@ handleNoteSave = function() {
   });
 };
 
-// changeClassOfLi = function(event) {
-//   console.log($(event.target).parent('.list-group-item'));
-  
-//   let targetParent = $(event.target).parent('.list-group-item');
-//   let targetParentId = $(event.target).parent('.list-group-item').attr('id');
-//   for (let i = 0; i < noteListCopy.length; i++) {
-//     if (i === targetParentId) {
-//       targetParent.addClass('display-none');
-//     }
-//   }
-  
-// }
-
 // BONUS Delete the clicked note
 handleNoteDelete = function(event) {
   //console.log(event);
@@ -88,6 +75,7 @@ handleNoteDelete = function(event) {
   // const targetParent = $(event.target).parent('.list-group-item');
   // targetParent.addClass('display-none');
   //alert("You deleted an item! refresh the page to see the changes!")
+
   // prevents the click listener for the list from being called when the button inside of it is clicked
   event.stopPropagation();
 
@@ -101,17 +89,14 @@ handleNoteDelete = function(event) {
   }
 
   console.log($(event.target).parent('.list-group-item'));
-
-const targetParent = $(event.target).parent('.list-group-item');
-targetParent.addClass('display-none');
-  
-
+  const targetParent = $(event.target).parent('.list-group-item');
+  targetParent.addClass('display-none');
 
   deleteNote(note.id).then(function() {
     //getAndRenderNotes();
-    setTimeout(function() {getAndRenderNotes()}, 1000);
+    setTimeout(function(){getAndRenderNotes()}, 1000);
     renderActiveNote()
-  })
+  });
 
 };
 
