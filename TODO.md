@@ -16,8 +16,8 @@
 
 ## Getting started
 
-* DONE <code>GET /notes</code> should return the notes.html file.
-* DONE <code>GET *</code> should return the index.html file.
+* DONE <code>GET '/notes'</code> should return the notes.html file.
+*  <code>GET '*'</code> should return the index.html file.
 
 * The following API routes should be created:
   - DONE <code>GET /api/notes</code> should read the db.json file and return all saved notes as JSON

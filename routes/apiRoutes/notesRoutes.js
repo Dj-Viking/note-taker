@@ -12,7 +12,7 @@ const { findById } = require('../../lib/notesFuncs');
 router.get('/notes', (req, res) => {
   console.log("================");
   console.log("\x1b[33m", " GET request query typed by the client", "\x1b[00m");
-  console.log(req.query);
+  console.log(req.app._router);
   console.log("================");
   console.log("\x1b[33m", "path searched by client", "\x1b[00m");
   console.log(req.path);
@@ -44,8 +44,8 @@ router.post('/notes', (req, res) => {
   } else {
     console.log("\x1b[31m", "POST request status code", "\x1b[00m");
     console.log(res.statusCode);
-    console.log("================");
-    console.log("\x1b[33m", "creating a new id for post request to add a note", "\x1b[00m");
+    //console.log("================");
+    //console.log("\x1b[33m", "creating a new id for post request to add a note", "\x1b[00m");
     req.body.id = notes.length.toString();
     const note = notesFuncs.createNewNote(req.body, notes);
     res.json(note);
@@ -64,8 +64,12 @@ router.delete('/notes/:id', (req, res) => {
         ,
         JSON.stringify({ notes: filteredArr }, null, 2)
       )
-      .then(data => res.json(notes))
+      .then(function() {
+        res.sendStatus(204);
+        res.json(notes);
+      })
       .catch(err => err);
+      
       
   } else {
     res.sendStatus(404);
