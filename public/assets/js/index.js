@@ -108,8 +108,8 @@ targetParent.addClass('display-none');
 
 
   deleteNote(note.id).then(function() {
-    getAndRenderNotes();
-    //setTimeout(function() {getAndRenderNotes()}, 1000);
+    //getAndRenderNotes();
+    setTimeout(function() {getAndRenderNotes()}, 1000);
     renderActiveNote()
   })
 
