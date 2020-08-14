@@ -17,16 +17,16 @@
 ## Getting started
 
 * DONE <code>GET '/notes'</code> should return the notes.html file.
-*  <code>GET '*'</code> should return the index.html file.
+* DONE? <code>GET '*'</code> should return the index.html file.
 
 * The following API routes should be created:
   - DONE <code>GET /api/notes</code> should read the db.json file and return all saved notes as JSON
-  - <code>POST /api/notes</code> should recieve a new note to save on the request body, add it to the <code>db.json</code> file and then return the new note to the client. You'll need to find a way to give each note a unique id when it's saved.
+  - DONE<code>POST /api/notes</code> should receive a new note to save on the request body, add it to the <code>db.json</code> file and then return the new note to the client. You'll need to find a way to give each note a unique id when it's saved.
 
 ## BONUS
 
 Add the delete route to the application using the following guideline:
-  * <code>DELETE /api/notes/:id</code> should receive a query parameter containing the id of a note to delete. 
-    - in order to delete a note, will need to read all notes from the <code>db.json</code> file, 
-    - remove the note with the given id property, and the rewrite the notes to the <code>db.json file</code>
+  * DONE <code>DELETE /api/notes/:id</code> should receive a query parameter containing the id of a note to delete. 
+    - DONE in order to delete a note, will need to read all notes from the <code>db.json</code> file, 
+    - DONE remove the note with the given id property, and the rewrite the notes to the <code>db.json file</code>
 
