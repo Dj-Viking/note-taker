@@ -61,6 +61,7 @@ handleNoteSave = function() {
   };
 
   saveNote(newNote).then(function(data) {
+    console.log(data);
     getAndRenderNotes();
     renderActiveNote();
   });
@@ -88,13 +89,13 @@ handleNoteDelete = function(event) {
     activeNote = {};
   }
 
-  console.log($(event.target).parent('.list-group-item'));
-  const targetParent = $(event.target).parent('.list-group-item');
-  targetParent.addClass('display-none');
+  // console.log($(event.target).parent('.list-group-item'));
+  // const targetParent = $(event.target).parent('.list-group-item');
+  // targetParent.addClass('display-none');
 
   deleteNote(note.id).then(function() {
-    //getAndRenderNotes();
-    setTimeout(function(){getAndRenderNotes()}, 1000);
+    getAndRenderNotes();
+    //setTimeout(function(){getAndRenderNotes()}, 1000);
     renderActiveNote()
   });
 
@@ -148,6 +149,7 @@ renderNoteList = function(notes) {
 // Gets notes from the db and renders them to the sidebar
 getAndRenderNotes = function() {
   return getNotes().then(function(data) {
+    console.log(data);
     renderNoteList(data);
   });
 };

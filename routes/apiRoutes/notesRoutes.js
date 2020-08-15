@@ -11,18 +11,18 @@ const { findById } = require('../../lib/notesFuncs');
 
 router.get('/notes', (req, res) => {
   console.log("================");
-  console.log("\x1b[33m", " GET request query typed by the client", "\x1b[00m");
-  console.log(req.app._router);
-  console.log("================");
+  // console.log("\x1b[33m", " GET request query typed by the client", "\x1b[00m");
+  // console.log(req.app._router);
+  // console.log("================");
   console.log("\x1b[33m", "path searched by client", "\x1b[00m");
   console.log(req.path);
   console.log("================");
-  console.log("\x1b[33m", "request headers", "\x1b[00m");
-  console.log(req.headers);
-  console.log("================");
-  console.log("\x1b[33m", "request fresh", "\x1b[00m");
-  console.log(req.statusCode);
-  console.log("================");
+  // console.log("\x1b[33m", "request headers", "\x1b[00m");
+  // console.log(req.headers);
+  // console.log("================");
+  // console.log("\x1b[33m", "request fresh", "\x1b[00m");
+  // console.log(req.statusCode);
+  // console.log("================");
   let results = notes;
   if (req.query) {
     //filter by query?
@@ -53,24 +53,14 @@ router.post('/notes', (req, res) => {
 });
 
 router.delete('/notes/:id', (req, res) => {
-  const filteredArr = notesFuncs.filterOutId(req.params.id, notes);
   console.log("\x1b[31m", "DELETE request incoming", "\x1b[00m");
-    console.log(res.statusCode);
-    console.log("================");
-    console.log("\x1b[31m", "writing new database after deleting an item", "\x1b[00m");
+  console.log(res.statusCode);
+  console.log("================");
+  console.log("\x1b[31m", "writing new database after deleting an item", "\x1b[00m");
+  const filteredArr = notesFuncs.filterOutId(req.params.id, notes);
   if (filteredArr) {  
-    fs.promises.writeFile(
-        path.join(__dirname, '../../data/data.json')
-        ,
-        JSON.stringify({ notes: filteredArr }, null, 2)
-      )
-      .then(function() {
-        res.sendStatus(204);
-        res.json(notes);
-      })
-      .catch(err => err);
-      
-      
+    console.log(filteredArr);
+    res.json(filteredArr);
   } else {
     res.sendStatus(404);
   }
