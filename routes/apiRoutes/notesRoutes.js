@@ -6,7 +6,7 @@ const path = require('path');
 const notesFuncs = require('../../lib/notesFuncs');
 
 //db import
-const { notes } = require('../../data/data.json');
+let { notes } = require('../../data/data.json');
 const { findById } = require('../../lib/notesFuncs');
 
 router.get('/notes', (req, res) => {
@@ -57,32 +57,18 @@ router.delete('/notes/:id', (req, res) => {
   console.log(res.statusCode);
   console.log("================");
   console.log("\x1b[31m", "writing new database after deleting an item", "\x1b[00m");
-  const filteredArr = notesFuncs.filterOutId(req.params.id, notes);
-  if (filteredArr) {  
-    console.log(filteredArr);
-    res.json(filteredArr);
+  let filteredArr = notesFuncs.filterOutId(req.params.id, notes);
+  //console.log(filteredArr);
+  //using filter i need to reassign the old array wiht the new one
+  // but not using filter i can just pass filterd Arr here......wierd
+  notes  = filteredArr;
+  if (notes) {  
+    //console.log(notes);
+    res.json(notes);
   } else {
     res.sendStatus(404);
   }
 });
-
-// router.delete('/notes/:id', (req, res) => {
-//   console.log("\x1b[31m", "DELETE request incoming", "\x1b[00m");
-//     console.log(res.statusCode);
-//     console.log("================");
-//     console.log("\x1b[31m", "writing new database after deleting an item", "\x1b[00m");
-//   const reqId = req.params.id;
-
-//   let note = notes.filter(note => {
-//     return note.id == reqId;
-//   });
-
-//   const index = notes.indexOf(note);
-
-//   notes.splice(index, 1);
-
-//   res.json(notes);
-// });
 
 module.exports = router;
 
