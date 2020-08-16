@@ -20,7 +20,7 @@ router.get('/notes', (req, res) => {
   // console.log("\x1b[33m", "request headers", "\x1b[00m");
   // console.log(req.headers);
   // console.log("================");
-  // console.log("\x1b[33m", "request fresh", "\x1b[00m");
+  // console.log("\x1b[33m", "request statusCode", "\x1b[00m");
   // console.log(req.statusCode);
   // console.log("================");
   let results = notes;
