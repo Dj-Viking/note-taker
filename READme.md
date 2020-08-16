@@ -4,7 +4,7 @@
 
 ## Heroku Link
 ### 👇Click the badge to check out the deployed Heroku page! 
-[![Deployed: Heroku](https://img.shields.io/badge/Deployed-Heroku-6517DD.svg)](https://server-note-buddy.herokuapp.com/)
+[![Deployed On: Heroku](https://img.shields.io/badge/Deployed%20on-Heroku-6517DD.svg)](https://server-note-buddy.herokuapp.com/)
 
 
 
