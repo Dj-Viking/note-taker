@@ -27,10 +27,6 @@ Creating a back-end server database solution using express.js and node.js to con
 * Anders Ackerman
 * My Three Cats!
 
-## Contribute
-
-none
-
 ## Questions
 
 If anybody has any questions please reach out to the creator of the project - Anders Ackerman via:
